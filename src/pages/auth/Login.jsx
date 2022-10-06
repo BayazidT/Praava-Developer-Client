@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -10,9 +11,32 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+
  function Login() {
+  const [err, setErr] = useState('');
     const { register, handleSubmit, formState: { errors }, } = useForm();
-    const onSubmit = data => console.log(data);
+    
+
+    const onSubmit = data => {
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    };
+    APICall(requestOptions);
+    };
+
+    async function APICall(request){
+      try {
+        await fetch(`http://127.0.0.1:5000/auth/login`, request)
+        .then(res => {
+          res.json().then((token) => {console.log({token})});
+   });
+      //navigate('/');
+      } catch (error) {
+        setErr('Something went wrong');
+      }
+    }
     return (
         <div className="container">
               <Card className="div-center mt-5" sx={{ maxWidth: 520 }}>
@@ -24,16 +48,16 @@ import Typography from '@mui/material/Typography';
                     sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
               }}
-                    noValidate
+                    // noValidate
                     autoComplete="off"
                     onSubmit={handleSubmit(onSubmit)}
       >
          <Grid item md={12}>
-         <TextField  md={12} fullWidth label="Email" variant="outlined" {...register("email", { required: true, pattern: /^[A-Za-z]+$/i })}
+         <TextField  md={12} type="email" fullWidth label="Email" variant="outlined" {...register("email" , {required: true, type:'email'})}
         />
          </Grid>
          <Grid item md={12}>
-         <TextField md={12} id="outlined-basic" fullWidth label="Password" variant="outlined" {...register("password", { min: 8, max: 20 })} />
+         <TextField md={12} type="password" id="outlined-basic" fullWidth label="Password" variant="outlined" {...register("password")} />
          </Grid>
       <CardActions>
       <Button type="submit" variant="outlined">Login</Button>
