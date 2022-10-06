@@ -1,0 +1,113 @@
+.navbar{
+    height: 50px;
+    border-bottom:1px solid rgb(224, 224, 237);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color:#555;
+    width: 100%;
+
+
+    .wrapper{
+        width: 100%;
+        display: flex;
+        padding: 20px;
+        align-items: center;
+        justify-content: space-between;
+        
+        .search{
+            display: flex;
+            align-items: center;
+            border: 0.5px solid lightgray;
+            border-radius: 5px;
+            padding: 3px;
+
+            input{
+                border: none;
+                outline: none;
+                background: transparent;
+
+                &::placeholder{
+                    font-style: 12px;
+                }
+            }
+        }
+        
+    }
+    .items{
+        display: flex;
+        .item{
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+
+            .icon{
+                font-size: 20px;
+            }
+            .counter{
+                width: 15px;
+                height:15px ;
+                background-color: yellow;
+                border-radius: 50%;
+                color: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 10px;
+                font-weight: bold;
+                position: absolute;
+                top: -2px;
+                right:  -2px;
+               
+            }
+            .navicon{
+                position: relative;
+                padding: 2px;
+                border-radius:5px ;
+                // &:nth-child(1){
+                //     background-color: whitesmoke;
+                // }
+                // &:nth-child(2){
+                //     background-color: #333;
+                // }
+                // &:nth-child(3){
+                //     border: .5px solid purple;
+                // }
+                &:hover{
+                    background-color: aliceblue;
+                }
+            }
+            .nav-dropdown{
+                position: absolute;
+                top: 40px;
+                right: -50px;
+                padding: 5px;
+                z-index: 1;
+                border: .1px solid rgb(231, 163, 231);
+                background-color: aliceblue;
+                ul{
+                    list-style: none;
+                    margin:0;
+                    padding: 0;
+                    width: 120px;
+                    li{
+                        display: flex;
+                        align-items: center;
+                        padding: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgba(193, 245, 241, 0.903);
+                        }
+                    }
+                }
+            }
+
+            .avatar{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

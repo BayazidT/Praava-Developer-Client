@@ -1,0 +1,22 @@
+.code{
+    position: relative;
+
+    .copy-icon{
+        color: gray;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+       .past-icon{
+        color: rgb(15, 215, 15);
+        background: gray;
+        padding: 1px;
+        border-radius: 5px;
+       }
+        &:hover{
+           
+            color: aquamarine;
+        }
+        
+    }
+}

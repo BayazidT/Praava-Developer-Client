@@ -1,0 +1,65 @@
+.container{
+    margin: 10px;
+    
+    .hero{
+        padding: 20px;
+        -webkit-box-shadow: 1px 1px 5px -1px #6A7475; 
+        box-shadow: 1px 1px 5px -1px #6A7475;
+
+        .title{
+            text-align: center;
+            color: gray;
+            font-size: 20px;
+        }
+        .text-center{
+            text-align: center;
+            margin: 10px;
+        }
+    }
+    .login{
+        margin-top:20px ;
+        padding: 20px;
+        -webkit-box-shadow: 1px 1px 5px -1px #6A7475; 
+        box-shadow: 1px 1px 5px -1px #6A7475;
+        .title{
+            
+            color: gray;
+            font-size: 18px;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .apiContent{
+            display: flex;
+            .left{
+                flex: 1;
+                margin-top:20px ;
+                margin-bottom:20px ;
+                justify-content: space-between;
+                .sub-head{
+                    color: black;
+                    padding: 5px;
+                    margin-top:10px;
+                    margin-bottom:10px;
+                }
+                .url{
+                    background-color: #eff6f4;
+                }
+                .table{
+                    border-bottom: .5px solid #6A7475;
+                    height: 200px;
+                    .table-header-row{
+                        background-color: #b8c3c4;
+                    }
+                }
+            }
+            .right{
+                flex: 1;
+                margin-top:20px ;
+                justify-content: space-between;
+               
+            }
+        }
+    }
+
+}

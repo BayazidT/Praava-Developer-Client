@@ -1,0 +1,36 @@
+.container{
+    .titleSection{
+        .title{
+            font-size: large;
+            color: gray;
+            text-align: center;
+            padding: 10px;
+            margin: 20px 5px;
+            -webkit-box-shadow: 1px 1px 5px -1px #6A7475; 
+            box-shadow: 1px 1px 5px -1px #6A7475;
+        }
+
+    }
+    .mainContent{
+        display: flex;
+        flex-direction: row;
+        margin:20px 5px;
+        gap:20px ;
+        .leftSection{
+            flex: 7;
+            padding: 10px;
+            color: gray;
+            -webkit-box-shadow: 1px 1px 5px -1px #6A7475; 
+        box-shadow: 1px 1px 5px -1px #6A7475;
+
+        }
+        .rightSection{
+            flex: 5;
+            padding: 10px;
+            color: gray;
+            height:20px;
+            -webkit-box-shadow: 1px 1px 5px -1px #6A7475; 
+        box-shadow: 1px 1px 5px -1px #6A7475;
+        }
+    }
+}
